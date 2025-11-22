@@ -33,9 +33,13 @@ Local Flask App → Docker Build → Docker Image → AWS ECR → (ECS / EKS / E
 ## **System Workflow**
 
 1️- A **Flask web application** (`app.py`) displays dynamic messages using environment variables.
+
 2️- A **multi-stage Dockerfile** builds an optimized container image.
+
 3️- The image is **built and tested locally** using Docker.
+
 4️- The image is **pushed to AWS ECR** for deployment.
+
 5️- You can later deploy it to **AWS ECS, EKS, or EC2**.
 
 **Flow Summary:**
