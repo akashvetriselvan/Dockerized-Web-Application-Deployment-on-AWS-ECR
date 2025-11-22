@@ -38,8 +38,12 @@ CMD ["python", "app.py"]
 Dockerfile — Defines build and runtime
 Docker Image — Portable environment
 Port 5000 — Application access
+---
 
-🧑‍💻 Author
-Akash V — Cloud & DevOps Enthusiast ☁️
-💼 Focus: AWS | Serverless | Terraform | CI/CD | Docker | Kubernetes
-🌍 LinkedIn | GitHub
+## 🧑‍💻 Author
+
+**Akash V** — Cloud & DevOps Engineer ☁️
+Specializing in Serverless Architectures, AWS Automation, and CI/CD Pipelines.
+🌍 [LinkedIn](https://linkedin.com/in/akashvetriselvan/) | [GitHub](https://github.com/akashvetriselvan)
+
+---
