@@ -1,11 +1,9 @@
-# 🐳 Dockerized Web Application Deployment on AWS ECR
+# Dockerized Web Application Deployment on AWS ECR
 
 ## **Project Overview**
 
 This project demonstrates how to **containerize a Python Flask web application** using Docker and deploy it to **AWS Elastic Container Registry (ECR)**.
-It covers the complete workflow — from creating the application, building Docker images, optimizing them using multi-stage builds, managing environment variables, and securely pushing the image to AWS ECR for future deployment on ECS, EKS, or EC2.
-
-This project helps you understand **core containerization principles**, **AWS ECR integration**, and real-world **DevOps workflows** involving Docker and AWS.
+It covers the complete workflow — from creating the application, building Docker images, optimizing them using multi-stage builds, managing environment variables, and securely pushing the image to AWS ECR for future deployment on ECS, EKS, or EC2. This project helps you understand **core containerization principles**, **AWS ECR integration**, and real-world **DevOps workflows** involving Docker and AWS.
 
 ---
 
@@ -40,7 +38,7 @@ Local Flask App → Docker Build → Docker Image → AWS ECR → (ECS / EKS / E
 4️⃣ The image is **pushed to AWS ECR** for deployment.
 5️⃣ You can later deploy it to **AWS ECS, EKS, or EC2**.
 
-📈 **Flow Summary:**
+**Flow Summary:**
 
 ```
 Flask App → Dockerfile → Docker Image → Local Test → AWS ECR Push → Cloud Deployment
@@ -90,7 +88,7 @@ flask==3.0.3
 
 ## **Docker Configuration**
 
-### 🐳 `Dockerfile`
+### `Dockerfile`
 
 ```dockerfile
 # ---------- Stage 1: Build ----------
@@ -112,13 +110,13 @@ CMD ["python", "app.py"]
 
 ## **Commands & Steps**
 
-### 🧱 Step 1 — Build the Image
+### Step 1 — Build the Image
 
 ```bash
 docker build -t my-docker-app .
 ```
 
-### 🧪 Step 2 — Run Locally
+### Step 2 — Run Locally
 
 ```bash
 docker run -d -p 5000:5000 my-docker-app
@@ -128,7 +126,7 @@ Visit → [http://localhost:5000](http://localhost:5000)
 
 ---
 
-### ⚙️ Step 3 — Add Environment Variables
+### Step 3 — Add Environment Variables
 
 #### Using CLI:
 
@@ -149,32 +147,32 @@ Run with:
 docker run --env-file .env -p 5000:5000 my-docker-app
 ```
 
-✅ Visit → [http://localhost:5000](http://localhost:5000)
+Visit → [http://localhost:5000](http://localhost:5000)
 
 ---
 
-### ☁️ Step 4 — Push to AWS ECR
+### Step 4 — Push to AWS ECR
 
-#### 1️⃣ Create Repository
+#### 1️-Create Repository
 
 ```bash
 aws ecr create-repository --repository-name my-docker-app
 ```
 
-#### 2️⃣ Authenticate Docker with ECR
+#### 2️-Authenticate Docker with ECR
 
 ```bash
 aws ecr get-login-password --region ap-south-1 |
 docker login --username AWS --password-stdin <account-id>.dkr.ecr.ap-south-1.amazonaws.com
 ```
 
-#### 3️⃣ Tag Image
+#### 3️-Tag Image
 
 ```bash
 docker tag my-docker-app:latest <account-id>.dkr.ecr.ap-south-1.amazonaws.com/my-docker-app:latest
 ```
 
-#### 4️⃣ Push Image
+#### 4️-Push Image
 
 ```bash
 docker push <account-id>.dkr.ecr.ap-south-1.amazonaws.com/my-docker-app:latest
@@ -182,14 +180,14 @@ docker push <account-id>.dkr.ecr.ap-south-1.amazonaws.com/my-docker-app:latest
 
 ---
 
-### 🧲 Step 5 — Pull & Run from ECR
+### Step 5 — Pull & Run from ECR
 
 ```bash
 docker pull <account-id>.dkr.ecr.ap-south-1.amazonaws.com/my-docker-app:latest
 docker run -d -p 5000:5000 <account-id>.dkr.ecr.ap-south-1.amazonaws.com/my-docker-app:latest
 ```
 
-✅ Verify: Open [http://localhost:5000](http://localhost:5000)
+Verify: Open [http://localhost:5000](http://localhost:5000)
 
 ---
 
@@ -214,11 +212,11 @@ docker run -d -p 5000:5000 <account-id>.dkr.ecr.ap-south-1.amazonaws.com/my-dock
 
 ## **Testing Steps**
 
-1️⃣ Build and run the Flask app locally on port 5000.
-2️⃣ Pass environment variables to test configuration.
-3️⃣ Push Docker image to AWS ECR.
-4️⃣ Pull image back from ECR to confirm successful deployment.
-5️⃣ Optionally deploy to ECS or EKS for a production-grade setup.
+1️- Build and run the Flask app locally on port 5000.
+2️- Pass environment variables to test configuration.
+3️- Push Docker image to AWS ECR.
+4️- Pull image back from ECR to confirm successful deployment.
+5️- Optionally deploy to ECS or EKS for a production-grade setup.
 
 ---
 
