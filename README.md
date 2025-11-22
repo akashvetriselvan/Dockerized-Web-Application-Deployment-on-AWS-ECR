@@ -26,7 +26,7 @@ Local Flask App → Docker Build → Docker Image → AWS ECR → (ECS / EKS / E
 | **AWS ECR**               | Secure container image registry      |
 | **AWS CLI**               | Command-line tool for AWS management |
 | **Environment Variables** | Dynamic app configuration            |
-| **GitHub**                | Source control and portfolio hosting |
+
 
 ---
 
