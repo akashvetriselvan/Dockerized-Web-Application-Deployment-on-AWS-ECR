@@ -254,8 +254,10 @@ Verify: Open [http://localhost:5000](http://localhost:5000)
 
 ---
 
-## **🧑‍💻 Author**
+## 🧑‍💻 Author
 
-**Akash V — Cloud & DevOps Enthusiast ☁️**
-💼 **Focus:** AWS | Serverless | Terraform | CI/CD | Docker | Kubernetes
-🌍 [**LinkedIn**](https://linkedin.com/in/yourprofile) | [**GitHub**](https://github.com/yourusername)
+**Akash V** — Cloud & DevOps Engineer ☁️
+Specializing in Serverless Architectures, AWS Automation, and CI/CD Pipelines.
+🌍 [LinkedIn](https://linkedin.com/in/akashvetriselvan/) | [GitHub](https://github.com/akashvetriselvan)
+
+---
